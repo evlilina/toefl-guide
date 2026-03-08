@@ -1,5 +1,3 @@
-/* Frutiger Aero + переключатель светлая/тёмная без JS через :has() */
-
 :root {
   /* LIGHT (default) */
   --bgA: #dff3ff;
