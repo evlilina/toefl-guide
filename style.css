@@ -292,6 +292,37 @@ html:has(#theme-toggle:checked) .bullets {
   color: rgba(232, 241, 255, 0.78);
 }
 
+.hero__image-wrap {
+  position: relative;
+  min-height: 360px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  align-self: stretch;
+}
+
+.hero__image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0)
+  );
+  pointer-events: none;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+}
+
 /* Sections */
 .section {
   padding: 54px 0;
@@ -528,6 +559,10 @@ html:has(#theme-toggle:checked) .footer {
   .hero__grid {
     grid-template-columns: 1fr;
   }
+  .hero__image-wrap,
+  .hero__image {
+    min-height: 300px;
+  }
   .grid--3 {
     grid-template-columns: 1fr;
   }
@@ -624,4 +659,48 @@ html:has(#theme-toggle:checked) .example-box {
 /* method note spacing */
 .method-note {
   margin-top: 16px;
+}
+
+/* About section improvements */
+.section--about {
+  padding-top: 48px;
+}
+
+.about-layout {
+  align-items: stretch;
+  gap: 24px;
+}
+
+.about-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-column h2 {
+  margin-bottom: 0;
+}
+
+.about-card {
+  height: 100%;
+  padding: 24px 28px;
+}
+
+.about-card p:first-child,
+.about-list {
+  margin-top: 0;
+}
+
+.about-list li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .about-layout {
+    gap: 18px;
+  }
+
+  .about-card {
+    padding: 20px;
+  }
 }
